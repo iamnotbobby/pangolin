@@ -342,37 +342,6 @@ export default function ResourceAuthPortal(props: ResourceAuthPortalProps) {
         <div>
             {!accessDenied ? (
                 <div>
-                    {isUnlocked() && build === "enterprise" ? (
-                        !env.branding.resourceAuthPage?.hidePoweredBy && (
-                            <div className="text-center mb-2">
-                                <span className="text-sm text-muted-foreground">
-                                    {t("poweredBy")}{" "}
-                                    <Link
-                                        href="https://pangolin.net/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline"
-                                    >
-                                        {env.branding.appName || "Pangolin"}
-                                    </Link>
-                                </span>
-                            </div>
-                        )
-                    ) : (
-                        <div className="text-center mb-2">
-                            <span className="text-sm text-muted-foreground">
-                                {t("poweredBy")}{" "}
-                                <Link
-                                    href="https://pangolin.net/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline"
-                                >
-                                    Pangolin
-                                </Link>
-                            </span>
-                        </div>
-                    )}
                     <Card>
                         <CardHeader>
                             {isUnlocked() &&
@@ -726,13 +695,6 @@ export default function ResourceAuthPortal(props: ResourceAuthPortalProps) {
                             </Tabs>
                         </CardContent>
                     </Card>
-                    {supporterStatus?.visible && (
-                        <div className="text-center mt-2">
-                            <span className="text-sm text-muted-foreground opacity-50">
-                                {t("noSupportKey")}
-                            </span>
-                        </div>
-                    )}
                 </div>
             ) : (
                 <ResourceAccessDenied />
